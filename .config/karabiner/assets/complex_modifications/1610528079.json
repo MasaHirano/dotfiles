@@ -2,7 +2,7 @@
   "title": "Change option + f/b to option + left arrow/right arrow",
   "rules": [
     {
-      "description": "option + f/b to option + arrows",
+      "description": "option + f/b/h to option + arrows or delete_or_backspace",
       "manipulators": [
         {
           "type": "basic",
@@ -36,6 +36,25 @@
           "to": [
             {
               "key_code": "left_arrow",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "mandatory": [
+                "option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
               "modifiers": [
                 "option"
               ]
