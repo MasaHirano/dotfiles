@@ -16,15 +16,15 @@ fi
 
 Install Homebrew from https://brew.sh/ and load formulae.
 ```sh
-$ cd <dotfiles dir>
-$ brew bundle
+cd <dotfiles dir>
+brew bundle
 ```
 
 ### Fish shell
 
 Since `setup.sh` puts `~/.config/fish/fish_plugins`, we load plugins based on it.
 ```sh
-$ curl -sL https://git.io/fisher | source && fisher update
+curl -sL https://git.io/fisher | source && fisher update
 ```
 
 About fisher command, refer https://github.com/jorgebucaran/fisher.
@@ -32,11 +32,19 @@ About fisher command, refer https://github.com/jorgebucaran/fisher.
 ### Python packages
 
 They are required by `nvim` and `tmux`.
+
+Execute this interactively (See https://github.com/pyenv/pyenv for details):
 ```sh
-$ pyenv install <python-version>
-$ pyenv rehash
-$ pyenv global <python-version>
-$ pip install neovim powerline-status psutil netifaces
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+```
+
+Install Python and packages.
+```sh
+pyenv install <python-version>
+pyenv rehash
+pyenv global <python-version>
+pip install neovim powerline-status psutil netifaces
 ```
 
 ### Fonts

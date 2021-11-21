@@ -33,8 +33,9 @@ eval (direnv hook fish)
 status --is-interactive; and source (rbenv init -|psub)
 
 # pyenv
-#   https://github.com/pyenv/pyenv-virtualenv#installing-as-a-pyenv-plugin
-status --is-interactive; and pyenv init - | source
+#   https://github.com/pyenv/pyenv#basic-github-checkout
+status is-login; and pyenv init --path | source
+status is-interactive; and pyenv init - | source
 
 
 # ----- Environment varialbes -----
