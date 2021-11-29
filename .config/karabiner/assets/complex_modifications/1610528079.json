@@ -1,8 +1,8 @@
 {
-  "title": "Change option + f/b to option + left arrow/right arrow",
+  "title": "Change option + f/b/h/d to option + arrows, (fn) + delete_or_backspace",
   "rules": [
     {
-      "description": "option + f/b/h to option + arrows or delete_or_backspace",
+      "description": "option + f/b/h/d to option + arrows, (fn) + delete_or_backspace",
       "manipulators": [
         {
           "type": "basic",
@@ -10,7 +10,7 @@
             "key_code": "f",
             "modifiers": {
               "mandatory": [
-                "option"
+                "left_option"
               ]
             }
           },
@@ -29,7 +29,7 @@
             "key_code": "b",
             "modifiers": {
               "mandatory": [
-                "option"
+                "left_option"
               ]
             }
           },
@@ -48,7 +48,7 @@
             "key_code": "h",
             "modifiers": {
               "mandatory": [
-                "option"
+                "left_option"
               ]
             }
           },
@@ -57,6 +57,26 @@
               "key_code": "delete_or_backspace",
               "modifiers": [
                 "option"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "mandatory": [
+                "left_option"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                "option",
+                "fn"
               ]
             }
           ]
