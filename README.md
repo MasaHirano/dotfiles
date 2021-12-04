@@ -1,6 +1,23 @@
-## Update profile
+# dotfiles
 
-Change `~/.bash_profile` or `~/.zprofile` according to your default shell.
+Configuration files for Fish-shell, Vim, tmux, and any other useful tools that power my Software Development.
+
+## Setup
+
+The setup script moves your current configuration files to a backup folder. See https://github.com/alpaca0984/dotfiles/blob/main/setup.sh for details.
+```sh
+git clone https://github.com/alpaca0984/dotfiles.git
+cd dotfiles
+sh setup.sh
+```
+
+## Manual operations
+
+After executing setup.sh, there is some chore that needs to be done manually.
+
+### Update profile
+
+Add this code block to ~/.bash_profile to activate Fish-shell.
 ```sh
 # Change shell
 FISH_SHELL="/usr/local/bin/fish"
@@ -9,8 +26,6 @@ if [ -x "$FISH_SHELL" ]; then
   exec $FISH_SHELL
 fi
 ```
-
-## Manual operations
 
 ### Homebrew
 
@@ -22,18 +37,16 @@ brew bundle
 
 ### Fish shell
 
-Since `setup.sh` puts `~/.config/fish/fish_plugins`, we load plugins based on it.
+Install `fisher` and load plugins based on ~/.config/fish/fish_plugins (see https://github.com/jorgebucaran/fisher for details).
 ```sh
 curl -sL https://git.io/fisher | source && fisher update
 ```
 
-About fisher command, refer https://github.com/jorgebucaran/fisher.
-
 ### Python packages
 
-They are required by `nvim` and `tmux`.
+Python packages are required by Neovim and tmux.
 
-Execute this interactively (See https://github.com/pyenv/pyenv for details):
+Execute this interactively (see https://github.com/pyenv/pyenv for details):
 ```sh
 set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
@@ -50,5 +63,5 @@ pip install neovim powerline-status psutil netifaces
 ### Fonts
 
 Install powerline fonts from either of them:
-- https://www.jetbrains.com/lp/mono/
-- https://github.com/powerline/fonts (I personally like `Droid Sans Mono for Powerline`)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (I personally like this)
+- [Powerline fonts](https://github.com/powerline/fonts)
