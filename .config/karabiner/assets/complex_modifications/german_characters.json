@@ -1,5 +1,5 @@
 {
-  "title": "(Original) German specific characters",
+  "title": "German specific characters",
   "rules": [
     {
       "description": "Change option + ;/'/[/- to ö/ä/ü/ß",
