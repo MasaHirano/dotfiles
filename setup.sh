@@ -34,7 +34,11 @@ mkdir -p $BACKUP_DIR/.config/{fish,karabiner,nvim}
 
 for file in "${FILES[@]}"
 do
-  if [ -e $HOME/$file ]; then
+  if [[ -L $HOME/$file ]]; then
+    continue
+  fi
+
+  if [[ -e $HOME/$file ]]; then
     cp -pr $HOME/$file $BACKUP_DIR/$file
     rm -rf $HOME/$file
   fi
