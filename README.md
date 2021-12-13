@@ -19,6 +19,8 @@ After executing setup.sh, there is some chore that needs to be done manually.
 
 Add this code block to ~/.bash_profile to activate Fish-shell.
 ```sh
+eval "$(pyenv init --path)"
+
 # Change shell
 FISH_SHELL="/usr/local/bin/fish"
 if [ -x "$FISH_SHELL" ]; then
