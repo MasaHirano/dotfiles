@@ -140,12 +140,9 @@ inoremap <silent> <C-b> <Left>
 inoremap <silent> <C-d> <Del>
 inoremap <silent> <C-e> <End>
 inoremap <silent> <C-f> <Right>
-inoremap <silent> <C-h> <BS>
 inoremap <silent> <C-k> <C-o>D<Right>
 inoremap <silent> <C-n> <Down>
 inoremap <silent> <C-p> <Up>
-inoremap <silent> <C-u> <C-o>d^
-inoremap <silent> <C-w> <C-o>db
 
 " Map auto complete of (, ", ', [
 inoremap $1 ()<esc>i
