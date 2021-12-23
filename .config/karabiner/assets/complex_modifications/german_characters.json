@@ -1,204 +1,203 @@
 {
-  "title": "German specific characters",
-  "rules": [
-    {
-      "description": "Change option + ;/'/[/- to ö/ä/ü/ß",
-      "manipulators": [
+    "title": "German specific characters",
+    "rules": [
         {
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "a"
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "a",
-              "modifiers": [
-                "left_shift"
-              ]
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "o"
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "o",
-              "modifiers": [
-                "left_shift"
-              ]
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ],
-              "optional": [
-                "caps_lock"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "u"
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "open_bracket",
-            "modifiers": {
-              "mandatory": [
-                "option",
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "u",
-              "modifiers": [
-                "left_shift"
-              ]
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "from": {
-            "key_code": "hyphen",
-            "modifiers": {
-              "mandatory": [
-                "option"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "s",
-              "modifiers": [
-                "left_option"
-              ]
-            },
-            {
-              "key_code": "vk_none"
-            }
-          ],
-          "type": "basic"
+            "description": "Change option + ;/'/[/- to ö/ä/ü/ß",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ],
+                            "optional": [
+                                "caps_lock"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "a"
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": {
+                            "mandatory": [
+                                "option",
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ],
+                            "optional": [
+                                "caps_lock"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "o"
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": [
+                                "option",
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "o",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ],
+                            "optional": [
+                                "caps_lock"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "u"
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "open_bracket",
+                        "modifiers": {
+                            "mandatory": [
+                                "option",
+                                "shift"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "u",
+                            "modifiers": [
+                                "left_shift"
+                            ]
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "hyphen",
+                        "modifiers": {
+                            "mandatory": [
+                                "option"
+                            ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "s",
+                            "modifiers": [
+                                "left_option"
+                            ]
+                        },
+                        {
+                            "key_code": "vk_none"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
-
