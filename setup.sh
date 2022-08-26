@@ -21,6 +21,7 @@ FILES=(
   .ideavimrc
   .tmux.conf
   .vimrc
+  .config/.zshrc
   .config/fish/config.fish
   .config/fish/fish_plugins
   .config/nvim/init.vim
@@ -49,12 +50,13 @@ done
 
 LOCAL_FILES=(
   .local/.gitconfig
+  .local/.zshrc
   .local/config.fish
 )
 
 for file in "${LOCAL_FILES[@]}"
 do
-  if [ ! -f $HOME/$file ]; then
+  if [[ ! -f $HOME/$file ]]; then
     cp $DOTFILES/$file $HOME/$file
   fi
 done
