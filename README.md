@@ -13,31 +13,33 @@ sh setup.sh
 
 ## Manual operations
 
-After executing setup.sh, there is some chore that needs to be done manually.
+After executing `setup.sh`, there is some chore that needs to be done manually.
 
-### Update profile
+### Setup zsh
 
-Add this code block to ~/.bash_profile to activate Fish-shell.
+- Install oh-my-zsh following https://ohmyz.sh/#install
+- Add this code block to the top of ~/.zshrc (before sourcing oh-my-zsh)
 ```sh
-eval "$(pyenv init --path)"
+if [[ -f "$HOME/.config/.zshrc" ]]; then
+  source $HOME/.config/.zshrc
+fi
 
-# Change shell
-FISH_SHELL="/usr/local/bin/fish"
-if [ -x "$FISH_SHELL" ]; then
-  export SHELL=$FISH_SHELL
-  exec $FISH_SHELL
+if [[ -f "$HOME/.local/.zshrc" ]]; then
+  source $HOME/.local/.zshrc
 fi
 ```
 
-### Homebrew
+### Install Homebrew formulae
 
 Install Homebrew from https://brew.sh/ and load formulae.
 ```sh
-cd <dotfiles dir>
+cd <dotfiles-dir>
 brew bundle
 ```
 
 ### Fish shell
+
+Besides `zsh`, Fish-Shell is used for integrated terminals in VSCode and JetBrains IDEs.
 
 Install `fisher` and load plugins based on ~/.config/fish/fish_plugins (see https://github.com/jorgebucaran/fisher for details).
 ```sh
@@ -46,7 +48,7 @@ curl -sL https://git.io/fisher | source && fisher update
 
 ### Python packages
 
-Python packages are required by Neovim and tmux.
+Some Python packages are required by Neovim and tmux.
 
 Execute this interactively (see https://github.com/pyenv/pyenv for details):
 ```sh
