@@ -39,8 +39,8 @@ set incsearch
 " Show matching brackets when text indicator is over them
 set showmatch
 
-" Show (partial) command in the last line of the screen
-set showcmd
+" Hide command in the last line of the screen
+set noshowcmd
 
 " If in Insert, Replace or Visual mode put a message on the last line
 set showmode

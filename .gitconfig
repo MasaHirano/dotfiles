@@ -20,7 +20,6 @@
 [alias]
   br = branch
   ci = commit
-  co = checkout
   dc = diff --cached
   loga = log --graph --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
   logall = log --graph --all --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
