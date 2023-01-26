@@ -1,16 +1,3 @@
-set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
-
-
-# ----- Aliases -----
-
-alias rm="rm -i"
-alias ag="ag --pager='less -R'"
-
-if type -q nvim
-  alias vim="nvim"
-end
-
-
 # ----- Theme settings for bobthefish -----
 
 set -g theme_display_date no
@@ -38,12 +25,14 @@ status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
 
 
-# ----- Environment varialbes -----
+# ----- Aliases and environment varialbes -----
 
+alias rm="rm -i"
 set -x LC_ALL en_US.UTF-8
 set -x LANG en_US.UTF-8
 if type -q nvim
   set -x EDITOR "/usr/local/bin/nvim"
+  alias vim="nvim"
 end
 
 # @see https://powerline.readthedocs.io/en/latest/installation/osx.html#python-package
