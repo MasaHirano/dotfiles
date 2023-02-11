@@ -1,3 +1,5 @@
+fish_add_path /opt/homebrew/bin
+
 # ----- Theme settings for bobthefish -----
 
 set -g theme_display_date no
