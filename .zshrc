@@ -1,10 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-if [[ -f $HOME/.local/.zshrc ]]; then
-  source $HOME/.local/.zshrc
-fi
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -111,7 +107,41 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+###############################################################
+# => General
+###############################################################
 export PATH="/usr/local/sbin:$PATH"
+
+alias vim=nvim
+
+
+###############################################################
+# => Plugin settings
+###############################################################
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Powerline
+# This must be done after pip is initialized because it depends on the `pip` command.
+export POWERLINE_REPOSITORY_ROOT="$(pip show powerline-status | grep Location | cut -d ' ' -f 2)"
+
+# zsh-z - https://github.com/agkozak/zsh-z
+export ZSHZ_TRAILING_SLASH=1
+
+
+###############################################################
+# => Local settings
+###############################################################
+
+if [[ -f $HOME/.local/.zshrc ]]; then
+  source $HOME/.local/.zshrc
+fi
+
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 # See https://sdkman.io/install
