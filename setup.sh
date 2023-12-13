@@ -22,6 +22,7 @@ FILES=(
   .tmux.conf
   .vimrc
   .zshrc
+  .p10k.zsh
   .config/fish/config.fish
   .config/fish/fish_plugins
   .config/nvim/init.vim
