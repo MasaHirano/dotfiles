@@ -145,9 +145,7 @@ export ZSHZ_TRAILING_SLASH=1
 # => Local settings
 ###############################################################
 
-if [[ -f $HOME/.local/.zshrc ]]; then
-  source $HOME/.local/.zshrc
-fi
+[[ -f $HOME/.local/.zshrc ]] && source $HOME/.local/.zshrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # https://github.com/romkatv/powerlevel10k

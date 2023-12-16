@@ -21,6 +21,7 @@ FILES=(
   .ideavimrc
   .tmux.conf
   .vimrc
+  .zprofile
   .zshrc
   .p10k.zsh
   .config/fish/config.fish
