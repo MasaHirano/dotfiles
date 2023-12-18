@@ -77,15 +77,24 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
   git
-  fzf-zsh-plugin          # https://github.com/unixorn/fzf-zsh-plugin
-  z                       # https://github.com/agkozak/zsh-z
-  zsh-autosuggestions     # https://github.com/zsh-users/zsh-autosuggestions
-  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+  fzf
+  z
 )
 
-source $ZSH/custom/plugins/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh
+custom_plugins=( # "<user>/<repository>"
+  zsh-users/zsh-autosuggestions     # https://github.com/zsh-users/zsh-autosuggestions
+  zsh-users/zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+)
+for plugin in "${custom_plugins[@]}"
+do
+  pair=(${(s:/:)plugin})
+  plugin_dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/${pair[2]}
+  [[ ! -d "$plugin_dir" ]] && git clone https://github.com/${pair[1]}/${pair[2]} $plugin_dir
+  plugins+=($pair[2])
+done
 
 source $ZSH/oh-my-zsh.sh
 
