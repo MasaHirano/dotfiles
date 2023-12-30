@@ -82,6 +82,7 @@ plugins=(
   git
   fzf
   z
+  poetry # https://python-poetry.org/docs/#oh-my-zsh
 )
 
 custom_plugins=( # "<user>/<repository>"
