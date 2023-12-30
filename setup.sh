@@ -64,6 +64,19 @@ do
 done
 
 
+# ----- Install dependencies -----
+
+# Homebrew - https://docs.brew.sh/Installation
+if ! type brew > /dev/null; then
+  curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+fi
+
+# Poetry - https://python-poetry.org/docs/#installing-with-the-official-installer
+if ! type poetry > /dev/null; then
+  curl -sSL https://install.python-poetry.org | python3 -
+fi
+
+
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/alpaca0984/dotfiles#manual-operations"
 echo;

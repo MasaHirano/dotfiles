@@ -77,15 +77,25 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
   git
-  fzf-zsh-plugin          # https://github.com/unixorn/fzf-zsh-plugin
-  z                       # https://github.com/agkozak/zsh-z
-  zsh-autosuggestions     # https://github.com/zsh-users/zsh-autosuggestions
-  zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+  fzf
+  z
+  poetry # https://python-poetry.org/docs/#oh-my-zsh
 )
 
-source $ZSH/custom/plugins/fzf-zsh-plugin/fzf-zsh-plugin.plugin.zsh
+custom_plugins=( # "<user>/<repository>"
+  zsh-users/zsh-autosuggestions     # https://github.com/zsh-users/zsh-autosuggestions
+  zsh-users/zsh-syntax-highlighting # https://github.com/zsh-users/zsh-syntax-highlighting
+)
+for plugin in "${custom_plugins[@]}"
+do
+  pair=(${(s:/:)plugin})
+  plugin_dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/${pair[2]}
+  [[ ! -d "$plugin_dir" ]] && git clone https://github.com/${pair[1]}/${pair[2]} $plugin_dir
+  plugins+=($pair[2])
+done
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,39 +129,19 @@ source $ZSH/oh-my-zsh.sh
 ###############################################################
 # => General
 ###############################################################
-export PATH="/usr/local/sbin:$PATH"
 
 alias vim=nvim
+
+[[ -f $HOME/.local/.zshrc ]] && source $HOME/.local/.zshrc
 
 
 ###############################################################
 # => Plugin settings
 ###############################################################
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# Powerline
-# This must be done after pip is initialized because it depends on the `pip` command.
-export POWERLINE_REPOSITORY_ROOT="$(pip show powerline-status | grep Location | cut -d ' ' -f 2)"
-
 # zsh-z - https://github.com/agkozak/zsh-z
 export ZSHZ_TRAILING_SLASH=1
-
-
-###############################################################
-# => Local settings
-###############################################################
-
-[[ -f $HOME/.local/.zshrc ]] && source $HOME/.local/.zshrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # https://github.com/romkatv/powerlevel10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-# See https://sdkman.io/install
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

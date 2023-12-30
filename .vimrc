@@ -1,12 +1,13 @@
-source $DOTFILES_ROOT/vimrcs/basic.vim
+let s:files = [
+  \ $DOTFILES_ROOT . "/vimrcs/basic.vim",
+  \ $DOTFILES_ROOT . "/vimrcs/plugins.vim",
+  \ $DOTFILES_ROOT . "/vimrcs/plugins_config.vim",
+  \ $DOTFILES_ROOT . "/vimrcs/color.vim",
+  \ "~/.local/.vimrc",
+\ ]
 
-source $DOTFILES_ROOT/vimrcs/plugins.vim
-
-source $DOTFILES_ROOT/vimrcs/plugins_config.vim
-
-" This must be put below plugins.vim because color schemes are installed as plugins
-source $DOTFILES_ROOT/vimrcs/color.vim
-
-if filereadable($HOME . "/.local/.vimrc")
-  source ~/.local/.vimrc
-endif
+for file in s:files
+  if filereadable(expand(file))
+    execute 'source ' . file
+  endif
+endfor
