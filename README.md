@@ -67,5 +67,5 @@ pip install neovim powerline-status psutil netifaces
 ### Fonts
 
 Install powerline fonts from either of them:
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (I personally like this)
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (my favorite)
 - [Powerline fonts](https://github.com/powerline/fonts)
