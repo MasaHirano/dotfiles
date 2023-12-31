@@ -14,17 +14,14 @@ set -g theme_display_k8s_context no
 # ----- Plugin settings -----
 
 # direnv
-#   https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
-eval (direnv hook fish)
+# See https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
+direnv hook fish | source
 
-# rbenv
-#   `$ rbenv init fish`
-status --is-interactive; and source (rbenv init -|psub)
-
-# pyenv
-#   https://github.com/pyenv/pyenv#basic-github-checkout
-status is-login; and pyenv init --path | source
-status is-interactive; and pyenv init - | source
+# asdf
+# See https://asdf-vm.com/guide/getting-started.html
+if test -f /opt/homebrew/opt/asdf/libexec/asdf.fish
+  source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
 
 
 # ----- Aliases and environment varialbes -----
