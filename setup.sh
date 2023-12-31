@@ -16,14 +16,15 @@ echo;
 # ----- Create links with backup -----
 
 FILES=(
+  Brewfile
   .gitconfig
-  .gitignore
   .ideavimrc
   .tmux.conf
   .vimrc
   .zprofile
   .zshrc
   .p10k.zsh
+  .asdfrc
   .config/fish/config.fish
   .config/fish/fish_plugins
   .config/nvim/init.vim
@@ -71,11 +72,17 @@ if ! type brew > /dev/null; then
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 fi
 
+brew bundle
+
 # Poetry - https://python-poetry.org/docs/#installing-with-the-official-installer
 if ! type poetry > /dev/null; then
   curl -sSL https://install.python-poetry.org | python3 -
 fi
 
+# Fisher - https://github.com/jorgebucaran/fisher?tab=readme-ov-file#installation
+if ! type fisher > /dev/null; then
+  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fi
 
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/alpaca0984/dotfiles#manual-operations"
