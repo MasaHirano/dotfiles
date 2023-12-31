@@ -1,12 +1,9 @@
 fish_add_path /opt/homebrew/bin
 
-# ----- Theme settings for bobthefish -----
+# ----- Theme settings for ilanCosman/tide -----
 
-set -g theme_display_date no
-set -g theme_color_scheme terminal2
-set -g theme_display_user yes
-set -g theme_title_use_abbreviated_path no
-set -g theme_title_display_user yes
+# See https://github.com/IlanCosman/tide/wiki/Configuration
+set --global tide_git_icon '\UE0A0'
 
 
 # ----- Plugin settings -----
