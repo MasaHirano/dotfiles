@@ -1,12 +1,5 @@
 # vim: syntax=ruby
 
-cask_args appdir: "/Applications"
-
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "sdkman/tap"
-
 brew "asdf"
 brew "direnv"
 brew "fish"
