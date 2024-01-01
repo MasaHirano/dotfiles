@@ -54,8 +54,10 @@ done
 LOCAL_FILES=(
   .local/.gitconfig
   .local/.zshrc
-  .local/config.fish
+  .local/fish/config.fish
 )
+
+mkdir -p $HOME/.local/fish
 
 for file in "${LOCAL_FILES[@]}"
 do

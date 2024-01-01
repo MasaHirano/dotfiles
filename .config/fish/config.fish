@@ -37,6 +37,6 @@ set -x POWERLINE_REPOSITORY_ROOT (pip show powerline-status | grep Location | cu
 
 # ----- Local settings -----
 
-if test -f ~/.local/config.fish
-  source ~/.local/config.fish
+if test -f ~/.local/fish/config.fish
+  source ~/.local/fish/config.fish
 end
