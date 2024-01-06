@@ -54,8 +54,10 @@ done
 LOCAL_FILES=(
   .local/.gitconfig
   .local/.zshrc
-  .local/config.fish
+  .local/fish/config.fish
 )
+
+mkdir -p $HOME/.local/fish
 
 for file in "${LOCAL_FILES[@]}"
 do
@@ -72,6 +74,7 @@ if ! type brew > /dev/null; then
   curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 fi
 
+PATH=$(brew --prefix)/bin:$PATH
 brew bundle
 
 # Poetry - https://python-poetry.org/docs/#installing-with-the-official-installer
@@ -80,8 +83,8 @@ if ! type poetry > /dev/null; then
 fi
 
 # Fisher - https://github.com/jorgebucaran/fisher?tab=readme-ov-file#installation
-if ! type fisher > /dev/null; then
-  curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+if ! fish -c "type fisher > /dev/null"; then
+  fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 fi
 
 echo "Setup has been done."
