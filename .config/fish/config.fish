@@ -3,12 +3,6 @@ fish_add_path (brew --prefix)/bin $HOME/.local/bin
 
 # ----- Plugin settings -----
 
-# tide - https://github.com/IlanCosman/tide/wiki/Configuration
-if type -q tide
-    set -g tide_git_icon \UE0A0
-    set -g tide_git_truncation_length 32
-end
-
 # direnv - https://github.com/direnv/direnv/blob/master/docs/hook.md#fish
 if type -q direnv
     direnv hook fish | source
@@ -40,3 +34,7 @@ set -x POWERLINE_REPOSITORY_ROOT (pip show powerline-status | grep Location | cu
 if test -f ~/.local/fish/config.fish
     source ~/.local/fish/config.fish
 end
+
+
+# Trigger starshi - https://starship.rs/guide/
+starship init fish | source

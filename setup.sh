@@ -30,6 +30,7 @@ FILES=(
   .config/nvim/init.vim
   .config/karabiner
   .config/powerline
+  .config/starship.toml
 )
 
 mkdir -p $HOME/.config/{fish,nvim}
