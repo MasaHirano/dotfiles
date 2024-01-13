@@ -30,6 +30,7 @@ FILES=(
   .config/nvim/init.vim
   .config/karabiner
   .config/powerline
+  .config/starship.toml
 )
 
 mkdir -p $HOME/.config/{fish,nvim}
@@ -84,7 +85,7 @@ fi
 
 # Fisher - https://github.com/jorgebucaran/fisher?tab=readme-ov-file#installation
 if ! fish -c "type fisher > /dev/null"; then
-  fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+  fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
 fi
 
 echo "Setup has been done."
