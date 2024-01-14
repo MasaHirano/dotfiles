@@ -14,6 +14,7 @@ $git_state\
 $git_metrics\
 $git_status\
 
+$shell\
 $character\
 """
 
@@ -37,3 +38,9 @@ detect_extensions = []
 symbol = "󰌠 "
 # trigger this module only with files
 detect_extensions = []
+
+[shell]
+fish_indicator = ""
+zsh_indicator = "zsh "
+format = "[$indicator]($style)"
+disabled = false

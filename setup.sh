@@ -23,7 +23,6 @@ FILES=(
   .vimrc
   .zprofile
   .zshrc
-  .p10k.zsh
   .asdfrc
   .config/fish/config.fish
   .config/fish/fish_plugins
