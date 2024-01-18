@@ -11,7 +11,6 @@ autoload -Uz _zinit
 
 zi snippet OMZL::directories.zsh
 zi snippet OMZL::key-bindings.zsh
-zi snippet OMZP::git
 zi snippet OMZP::fzf
 zi snippet OMZP::z
 
