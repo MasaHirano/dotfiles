@@ -9,8 +9,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
+zi snippet OMZL::git.zsh
 zi snippet OMZL::directories.zsh
 zi snippet OMZL::key-bindings.zsh
+zi snippet OMZP::git
 zi snippet OMZP::fzf
 zi snippet OMZP::z
 zi snippet OMZP::asdf
