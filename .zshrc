@@ -13,6 +13,7 @@ zi snippet OMZL::directories.zsh
 zi snippet OMZL::key-bindings.zsh
 zi snippet OMZP::fzf
 zi snippet OMZP::z
+zi snippet OMZP::asdf
 
 zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-syntax-highlighting
