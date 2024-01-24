@@ -26,14 +26,14 @@ FILES=(
   .asdfrc
   .config/fish/config.fish
   .config/fish/fish_plugins
-  .config/nvim/init.vim
-  .config/karabiner
+  .config/nvim
   .config/powerline
+  .config/karabiner/assets
   .config/starship.toml
 )
 
-mkdir -p $HOME/.config/{fish,nvim}
-mkdir -p $BACKUP_DIR/.config/{fish,nvim}
+mkdir -p $HOME/.config/{fish,nvim,karabiner}
+mkdir -p $BACKUP_DIR/.config/{fish,nvim,karabiner}
 
 for file in "${FILES[@]}"
 do

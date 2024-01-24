@@ -1,7 +1,6 @@
 Brewfile.lock.json
 
 .DS_Store
-.config/karabiner/automatic_backups
 
 # See https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
 *.swp
