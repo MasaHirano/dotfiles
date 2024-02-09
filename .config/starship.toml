@@ -40,7 +40,7 @@ symbol = "󰌠 "
 detect_extensions = []
 
 [shell]
-fish_indicator = ""
-zsh_indicator = "zsh "
+fish_indicator = "fish "
+zsh_indicator = ""
 format = "[$indicator]($style)"
 disabled = false
