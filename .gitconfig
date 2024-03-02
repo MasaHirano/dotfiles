@@ -26,10 +26,10 @@
   d = diff
   dc = diff --cached
   f = fetch origin --prune
-  l = log --graph --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
-  la = log --graph --all --date=short --pretty=format:\"%Cblue%h%Creset %s (%Cgreen%cn%Creset) %cr %Cred%d%Creset\"
-  pf = push origin head --force-with-lease
+  l = log --graph --date=short --pretty=format:\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset\"
+  la = l --all
   st = status -s
+  sw = switch
   dmb = "!f () { git checkout $1; git branch --merged | egrep -v '\\*|develop|main' | xargs git branch -d; };f"
 [filter "lfs"]
   clean = git-lfs clean -- %f
