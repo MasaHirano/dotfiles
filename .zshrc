@@ -26,6 +26,9 @@ alias g=git
 alias vim=nvim
 alias rm="rm -i"
 
+# Powerline - https://powerline.readthedocs.io/en/master/installation.html#repository-root
+export POWERLINE_REPOSITORY_ROOT=$(pip show powerline-status | grep Location | cut -d ' ' -f 2)
+
 # zsh-z - https://github.com/agkozak/zsh-z
 export ZSHZ_TRAILING_SLASH=1
 
