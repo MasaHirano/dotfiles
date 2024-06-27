@@ -88,5 +88,5 @@ if ! fish -c "type fisher > /dev/null"; then
 fi
 
 echo "Setup has been done."
-echo "Some manual operations are required. Please see https://github.com/alpaca0984/dotfiles#manual-operations"
+echo "Some manual operations are required. Please see https://github.com/masahirano/dotfiles#manual-operations"
 echo;
