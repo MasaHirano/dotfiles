@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# --------------------
+# Dotfiles Install Command:
+#   ./setup-devcontainer.sh && source $HOME/.zshrc && vim +PlugInstall +qall
+# --------------------
+
 cd $HOME
 DOTFILES=$HOME/dotfiles
 
@@ -9,9 +14,7 @@ DOTFILES=$HOME/dotfiles
 FILES=(
   .gitconfig
   .vimrc
-  .zprofile
   .zshrc
-  .config/nvim
   .config/starship.toml
 )
 
@@ -35,6 +38,8 @@ LOCAL_FILES=(
   .local/.zshrc
 )
 
+mkdir -p $HOME/.local
+
 for file in "${LOCAL_FILES[@]}"
 do
   if [[ ! -f $HOME/$file ]]; then
@@ -45,17 +50,14 @@ done
 
 # ----- Install dependencies -----
 
-# Starship - https://starship.rs/
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+sudo apt update && sudo apt upgrade
+
+if ! command -v python3 &> /dev/null; then
+  sudo apt install -y python3
+fi
 
 # fzf - https://github.com/junegunn/fzf
-sudo apt install fzf python3-neovim
+sudo apt install -y neovim fzf python3-neovim
 
-
-# ----- Complete -----
-
-source $HOME/.zshrc
-vim +PlugInstall +qall
-
-echo "Setup has been done."
-echo;
+# Starship - https://starship.rs/
+curl -sS https://starship.rs/install.sh | sh -s -- -y
