@@ -2,32 +2,35 @@
 
 # --------------------
 # Dotfiles Install Command:
-#   ./setup-devcontainer.sh && source $HOME/.zshrc && vim +PlugInstall +qall
+#   $ ./platform/devcontainer/setup.sh
 # --------------------
 
 cd $HOME
 DOTFILES=$HOME/dotfiles
 
 
-# ----- Create links with backup -----
+# ----- Create links -----
 
-FILES=(
-  .gitconfig
-  .vimrc
-  .zshrc
-  .config/starship.toml
+typeset -A FILES=(
+  # from -> to
+  '.gitconfig' '.gitconfig'
+  '.vimrc' '.vimrc'
+  '.config/nvim' '.config/nvim'
+  '.config/starship.toml' '.config/starship.toml'
+  'platform/devcontainer/.zshrc' '.zshrc'
 )
 
-for file in "${FILES[@]}"
+for from in "${!FILES[@]}"
 do
-  if [[ -L $HOME/$file ]]; then
+  to=${FILES[$from]}
+  if [[ -L $HOME/$to ]]; then
     continue
   fi
 
-  if [[ -e $HOME/$file ]]; then
-    rm -rf $HOME/$file
+  if [[ -e $HOME/$to ]]; then
+    rm -rf $HOME/$to
   fi
-  ln -s $DOTFILES/$file $HOME/$file
+  ln -s $DOTFILES/$from $HOME/$to
 done
 
 
