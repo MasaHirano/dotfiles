@@ -6,7 +6,7 @@ Configuration files for Fish-shell, Vim, tmux, and any other useful tools that p
 
 The setup script moves your current configuration files to a backup folder. See https://github.com/alpaca0984/dotfiles/blob/main/setup.sh for details.
 ```sh
-git clone https://github.com/alpaca0984/dotfiles.git
+git clone https://github.com/masahirano/dotfiles.git
 cd dotfiles
 sh setup.sh
 ```
