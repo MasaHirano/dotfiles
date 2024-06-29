@@ -1,14 +1,13 @@
-" Automatic installation
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"   - Vim (Windows): '~/vimfiles/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
 
 " A simple Vim plugin to switch segments of text with predefined replacements
 "   https://github.com/AndrewRadev/switch.vim
@@ -128,5 +127,6 @@ Plug 'yuku-t/vim-ref-ri'
 "   https://github.com/will133/vim-dirdiff
 Plug 'will133/vim-dirdiff'
 
-" Initialize plugin system
+" Call plug#end to update &runtimepath and initialize the plugin system.
+" - It automatically executes `filetype plugin indent on` and `syntax enable`
 call plug#end()
