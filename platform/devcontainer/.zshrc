@@ -32,10 +32,10 @@ export ZSHZ_TRAILING_SLASH=1
 # Initialize Starship
 eval "$(starship init zsh)"
 
-# Install vim-plug
-VIM_PLUG="${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim
-if [[ ! -f $VIM_PLUG ]]; then
-  curl -fLo $VIM_PLUG --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  vim +PlugInstall +qall
-fi
+# # Install vim-plug
+# VIM_PLUG="${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim
+# if [[ ! -f $VIM_PLUG ]]; then
+#   curl -fLo $VIM_PLUG --create-dirs \
+#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+#   vim +PlugInstall +qall
+# fi

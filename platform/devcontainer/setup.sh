@@ -3,6 +3,7 @@
 # --------------------
 # Dotfiles Install Command:
 #   $ ./platform/devcontainer/setup.sh
+#   See also: https://code.visualstudio.com/docs/devcontainers/containers#_personalizing-with-dotfile-repositories
 # --------------------
 
 cd $HOME
@@ -53,14 +54,14 @@ done
 
 # ----- Install dependencies -----
 
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 if ! command -v python3 &> /dev/null; then
   sudo apt install -y python3
 fi
 
 # fzf - https://github.com/junegunn/fzf
-sudo apt install -y neovim fzf python3-neovim
+sudo apt install -y fzf neovim python3-neovim
 
 # Starship - https://starship.rs/
 curl -sS https://starship.rs/install.sh | sh -s -- -y
