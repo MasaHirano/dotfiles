@@ -35,14 +35,6 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 "   https://github.com/airblade/vim-gitgutter
 Plug 'airblade/vim-gitgutter'
 
-" a unite.vim plugin for rails
-"   https://github.com/basyura/unite-rails
-Plug 'basyura/unite-rails'
-
-" Add additional support for Ansible in VIM
-"   https://github.com/chase/vim-ansible-yaml
-Plug 'chase/vim-ansible-yaml'
-
 " Vim script for text filtering and alignment
 "   https://github.com/godlygeek/tabular
 Plug 'godlygeek/tabular'
@@ -55,10 +47,6 @@ Plug 'honza/vim-snippets'
 "   https://github.com/thinca/vim-submode
 Plug 'kana/vim-submode'
 
-" emmet for vim
-"   https://github.com/mattn/emmet-vim
-Plug 'mattn/emmet-vim'
-
 " A Vim plugin for visually displaying indent levels in code
 "   https://github.com/nathanaelkane/vim-indent-guides
 Plug 'nathanaelkane/vim-indent-guides'
@@ -66,10 +54,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Better whitespace highlighting for Vim
 "   https://github.com/ntpeters/vim-better-whitespace
 Plug 'ntpeters/vim-better-whitespace'
-
-" HTML5 omnicomplete and syntax
-"   https://github.com/othree/html5.vim
-Plug 'othree/html5.vim'
 
 " Vim plugin for intensely orgasmic commenting
 "   https://github.com/scrooloose/nerdcommenter
@@ -99,17 +83,9 @@ Plug 'tomasr/molokai'
 "   https://github.com/tpope/vim-endwise
 Plug 'tpope/vim-endwise'
 
-" Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation, Syntastic support
-"   https://github.com/udalov/kotlin-vim
-Plug 'udalov/kotlin-vim'
-
 " lean & mean status/tabline for vim that's light as air
 "   https://github.com/vim-airline/vim-airline
 Plug 'vim-airline/vim-airline'
-
-" Vim/Ruby Configuration Files
-"   https://github.com/vim-ruby/vim-ruby
-Plug 'vim-ruby/vim-ruby'
 
 " Help folks to align text, eqns, declarations, tables, etc
 "   https://github.com/vim-scripts/Align
