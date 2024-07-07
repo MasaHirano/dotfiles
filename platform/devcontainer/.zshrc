@@ -14,7 +14,6 @@ zi wait lucid atload"zicompinit" for \
 
 zi snippet OMZP::fzf
 zi snippet OMZP::z
-zi snippet OMZP::asdf
 
 zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-syntax-highlighting
@@ -25,17 +24,7 @@ alias rm="rm -i"
 
 # zsh-z - https://github.com/agkozak/zsh-z
 export ZSHZ_TRAILING_SLASH=1
-
-# load local configuration file if exists
-[[ -f $HOME/.local/.zshrc ]] && source $HOME/.local/.zshrc
+export DOTFILES_ROOT=$HOME/dotfiles
 
 # Initialize Starship
 eval "$(starship init zsh)"
-
-# # Install vim-plug
-# VIM_PLUG="${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim
-# if [[ ! -f $VIM_PLUG ]]; then
-#   curl -fLo $VIM_PLUG --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-#   vim +PlugInstall +qall
-# fi

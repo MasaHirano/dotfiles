@@ -14,7 +14,6 @@ DOTFILES=$HOME/dotfiles
 
 typeset -A FILES=(
   # from -> to
-  '.gitconfig' '.gitconfig'
   '.vimrc' '.vimrc'
   '.config/nvim' '.config/nvim'
   '.config/starship.toml' '.config/starship.toml'
@@ -32,23 +31,6 @@ do
     rm -rf $HOME/$to
   fi
   ln -s $DOTFILES/$from $HOME/$to
-done
-
-
-# ----- Local settings templates -----
-
-LOCAL_FILES=(
-  .local/.gitconfig
-  .local/.zshrc
-)
-
-mkdir -p $HOME/.local
-
-for file in "${LOCAL_FILES[@]}"
-do
-  if [[ ! -f $HOME/$file ]]; then
-    cp $DOTFILES/$file $HOME/$file
-  fi
 done
 
 
