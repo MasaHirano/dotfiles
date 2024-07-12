@@ -16,8 +16,8 @@ typeset -A FILES=(
   # from -> to
   '.vimrc' '.vimrc'
   '.config/nvim' '.config/nvim'
-  '.config/starship.toml' '.config/starship.toml'
   'platform/devcontainer/.zshrc' '.zshrc'
+  'platform/devcontainer/.config/starship.toml' '.config/starship.toml'
 )
 
 for from in "${!FILES[@]}"
@@ -47,3 +47,14 @@ sudo apt install -y fzf neovim python3-neovim
 
 # Starship - https://starship.rs/
 curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+# zsh plugins
+ZSH_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
+if [[ ! -d "${ZSH_PLUGINS}/zsh-autosuggestions" ]]; then
+  git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions \
+    "${ZSH_PLUGINS}/zsh-autosuggestions"
+fi
+if [[ ! -d "${ZSH_PLUGINS}/zsh-syntax-highlighting" ]]; then
+  git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    "${ZSH_PLUGINS}/zsh-syntax-highlighting"
+fi
