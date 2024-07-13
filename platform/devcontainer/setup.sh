@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # --------------------
 # Dotfiles Install Command:
@@ -6,24 +6,25 @@
 #   See also: https://code.visualstudio.com/docs/devcontainers/containers#_personalizing-with-dotfile-repositories
 # --------------------
 
+set -e
+
 cd $HOME
 DOTFILES=$HOME/dotfiles
 
 
 # ----- Create links -----
 
-typeset -A FILES=(
+typeset -A FILES
+FILES=(
   # from -> to
-  '.gitconfig' '.gitconfig'
   '.vimrc' '.vimrc'
   '.config/nvim' '.config/nvim'
-  '.config/starship.toml' '.config/starship.toml'
   'platform/devcontainer/.zshrc' '.zshrc'
+  'platform/devcontainer/.config/starship.toml' '.config/starship.toml'
 )
 
-for from in "${!FILES[@]}"
+for from to in "${(@kv)FILES}"
 do
-  to=${FILES[$from]}
   if [[ -L $HOME/$to ]]; then
     continue
   fi
@@ -32,23 +33,6 @@ do
     rm -rf $HOME/$to
   fi
   ln -s $DOTFILES/$from $HOME/$to
-done
-
-
-# ----- Local settings templates -----
-
-LOCAL_FILES=(
-  .local/.gitconfig
-  .local/.zshrc
-)
-
-mkdir -p $HOME/.local
-
-for file in "${LOCAL_FILES[@]}"
-do
-  if [[ ! -f $HOME/$file ]]; then
-    cp $DOTFILES/$file $HOME/$file
-  fi
 done
 
 
@@ -65,3 +49,21 @@ sudo apt install -y fzf neovim python3-neovim
 
 # Starship - https://starship.rs/
 curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+# zsh plugins
+ZSH_PLUGINS="$HOME/.oh-my-zsh/custom/plugins"
+if [[ ! -d "${ZSH_PLUGINS}/zsh-autosuggestions" ]]; then
+  git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions \
+    "${ZSH_PLUGINS}/zsh-autosuggestions"
+fi
+if [[ ! -d "${ZSH_PLUGINS}/zsh-syntax-highlighting" ]]; then
+  git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    "${ZSH_PLUGINS}/zsh-syntax-highlighting"
+fi
+
+source $HOME/.zshrc
+
+# vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim +PlugInstall +qall

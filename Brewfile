@@ -3,6 +3,7 @@
 brew "asdf"
 brew "direnv"
 brew "fish"
+brew "fzf"
 brew "jq"
 brew "neovim"
 brew "nkf"
