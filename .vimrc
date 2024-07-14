@@ -1,3 +1,7 @@
+if empty($DOTFILES_ROOT)
+  echoerr "Error: DOTFILES_ROOT is empty"
+endif
+
 " vim-plug: automatic installation
 "   https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
