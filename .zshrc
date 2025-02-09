@@ -28,6 +28,9 @@ alias rm="rm -i"
 
 export EDITOR=nvim
 
+# asdf - https://asdf-vm.com/guide/getting-started.html#add-shims-directory-to-path-required-3
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
 # Powerline - https://powerline.readthedocs.io/en/master/installation.html#repository-root
 export POWERLINE_REPOSITORY_ROOT=$(pip show powerline-status | grep Location | cut -d ' ' -f 2)
 
