@@ -26,6 +26,8 @@ alias g=git
 alias vim=nvim
 alias rm="rm -i"
 
+export EDITOR=nvim
+
 # Powerline - https://powerline.readthedocs.io/en/master/installation.html#repository-root
 export POWERLINE_REPOSITORY_ROOT=$(pip show powerline-status | grep Location | cut -d ' ' -f 2)
 
