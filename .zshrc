@@ -17,7 +17,7 @@ zi wait lucid atload"zicompinit" for \
 
 zi snippet OMZP::fzf
 zi snippet OMZP::z
-zi snippet OMZP::asdf
+zi snippet OMZP::mise
 
 zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-syntax-highlighting
@@ -28,8 +28,8 @@ alias rm="rm -i"
 
 export EDITOR=nvim
 
-# asdf - https://asdf-vm.com/guide/getting-started.html#add-shims-directory-to-path-required-3
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# Activate `mise` - https://mise.jdx.dev/getting-started.html#activate-mise
+eval "$(mise activate zsh)"
 
 # Powerline - https://powerline.readthedocs.io/en/master/installation.html#repository-root
 export POWERLINE_REPOSITORY_ROOT=$(pip show powerline-status | grep Location | cut -d ' ' -f 2)

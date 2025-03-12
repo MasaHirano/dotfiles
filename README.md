@@ -21,9 +21,7 @@ Some Python packages are required by Neovim and tmux.
 
 Install Python and packages.
 ```sh
-asdf plugin add python
-asdf install python <python-version>
-asdf global python <python-version>
+mise install python@latest
 pip install neovim powerline-status psutil netifaces
 ```
 

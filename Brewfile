@@ -1,9 +1,8 @@
 # vim: syntax=ruby
 
-brew "asdf"
-brew "direnv"
 brew "fzf"
 brew "jq"
+brew "mise"
 brew "neovim"
 brew "nkf"
 brew "starship"
