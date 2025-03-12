@@ -24,16 +24,14 @@ FILES=(
   .zprofile
   .zshrc
   .asdfrc
-  .config/fish/config.fish
-  .config/fish/fish_plugins
   .config/nvim
   .config/powerline
   .config/karabiner/assets
   .config/starship.toml
 )
 
-mkdir -p $HOME/.config/{fish,nvim,karabiner}
-mkdir -p $BACKUP_DIR/.config/{fish,nvim,karabiner}
+mkdir -p $HOME/.config/{nvim,karabiner}
+mkdir -p $BACKUP_DIR/.config/{nvim,karabiner}
 
 for file in "${FILES[@]}"
 do
@@ -54,10 +52,7 @@ done
 LOCAL_FILES=(
   .local/.gitconfig
   .local/.zshrc
-  .local/fish/config.fish
 )
-
-mkdir -p $HOME/.local/fish
 
 for file in "${LOCAL_FILES[@]}"
 do
@@ -80,11 +75,6 @@ brew bundle
 # Poetry - https://python-poetry.org/docs/#installing-with-the-official-installer
 if ! type poetry > /dev/null; then
   curl -sSL https://install.python-poetry.org | python3 -
-fi
-
-# Fisher - https://github.com/jorgebucaran/fisher?tab=readme-ov-file#installation
-if ! fish -c "type fisher > /dev/null"; then
-  fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
 fi
 
 echo "Setup has been done."

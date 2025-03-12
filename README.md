@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration files for Fish-shell, Vim, tmux, and any other useful tools that power my Software Development.
+Configuration files for Zsh, Vim, tmux, and any other useful tools that power my Software Development.
 
 ## Setup
 
