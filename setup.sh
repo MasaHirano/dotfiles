@@ -17,17 +17,17 @@ echo;
 
 FILES=(
   Brewfile
+  .asdfrc
+  .config/karabiner/assets
+  .config/nvim
+  .config/powerline
+  .config/starship.toml
   .gitconfig
   .ideavimrc
   .tmux.conf
   .vimrc
   .zprofile
   .zshrc
-  .asdfrc
-  .config/nvim
-  .config/powerline
-  .config/karabiner/assets
-  .config/starship.toml
 )
 
 mkdir -p $HOME/.config/{nvim,karabiner}
@@ -71,11 +71,6 @@ fi
 
 PATH=$(brew --prefix)/bin:$PATH
 brew bundle
-
-# Poetry - https://python-poetry.org/docs/#installing-with-the-official-installer
-if ! type poetry > /dev/null; then
-  curl -sSL https://install.python-poetry.org | python3 -
-fi
 
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/masahirano/dotfiles#manual-operations"
