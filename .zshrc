@@ -1,11 +1,16 @@
 # Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 
+# load local configuration file if exists
+[[ -f $HOME/.local/.zshrc ]] && source $HOME/.local/.zshrc
+
 # Zinit - https://github.com/zdharma-continuum/zinit?tab=readme-ov-file#manual
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
+
+mkdir -p $ZSH_CACHE_DIR/completions
 
 zi snippet OMZL::directories.zsh
 zi snippet OMZL::key-bindings.zsh
@@ -41,9 +46,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-# load local configuration file if exists
-[[ -f $HOME/.local/.zshrc ]] && source $HOME/.local/.zshrc
 
 eval "$(starship init zsh)"
 
