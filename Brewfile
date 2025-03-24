@@ -7,7 +7,6 @@ brew "neovim"
 brew "nkf"
 brew "starship"
 brew "tig"
-brew "tmux"
 brew "tree"
 
 cask "alfred"

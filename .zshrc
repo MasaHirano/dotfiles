@@ -31,9 +31,6 @@ export EDITOR=nvim
 # Activate `mise` - https://mise.jdx.dev/getting-started.html#activate-mise
 eval "$(mise activate zsh)"
 
-# Powerline - https://powerline.readthedocs.io/en/master/installation.html#repository-root
-export POWERLINE_REPOSITORY_ROOT=$(pip show powerline-status | grep Location | cut -d ' ' -f 2)
-
 # zsh-z - https://github.com/agkozak/zsh-z
 export ZSHZ_TRAILING_SLASH=1
 

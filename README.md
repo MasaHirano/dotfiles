@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration files for Zsh, Vim, tmux, and any other useful tools that power my Software Development.
+Configuration files for Zsh, Vim, and any other useful tools that power my Software Development.
 
 ## Setup
 
@@ -22,7 +22,7 @@ Some Python packages are required by Neovim and tmux.
 Install Python and packages.
 ```sh
 mise install python@latest
-pip install neovim powerline-status psutil netifaces
+pip install neovim psutil netifaces
 ```
 
 ### Fonts

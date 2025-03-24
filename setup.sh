@@ -20,11 +20,9 @@ FILES=(
   .asdfrc
   .config/karabiner/assets
   .config/nvim
-  .config/powerline
   .config/starship.toml
   .gitconfig
   .ideavimrc
-  .tmux.conf
   .vimrc
   .zprofile
   .zshrc
