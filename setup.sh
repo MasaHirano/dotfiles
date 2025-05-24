@@ -16,9 +16,9 @@ echo;
 # ----- Create links with backup -----
 
 FILES=(
-  Brewfile
   .asdfrc
   .config/karabiner/assets
+  .config/mise/config.toml
   .config/nvim
   .config/starship.toml
   .gitconfig
@@ -26,17 +26,16 @@ FILES=(
   .vimrc
   .zprofile
   .zshrc
+  Brewfile
 )
 
-mkdir -p $HOME/.config/{nvim,karabiner}
-mkdir -p $BACKUP_DIR/.config/{nvim,karabiner}
-
-for file in "${FILES[@]}"
-do
+for file in "${FILES[@]}"; do
   if [[ -L $HOME/$file ]]; then
     continue
   fi
 
+  mkdir -p "$(dirname "$HOME/$file")"
+  mkdir -p "$(dirname "$BACKUP_DIR/$file")"
   if [[ -e $HOME/$file ]]; then
     cp -pr $HOME/$file $BACKUP_DIR/$file
     rm -rf $HOME/$file
@@ -52,8 +51,7 @@ LOCAL_FILES=(
   .local/.zshrc
 )
 
-for file in "${LOCAL_FILES[@]}"
-do
+for file in "${LOCAL_FILES[@]}"; do
   if [[ ! -f $HOME/$file ]]; then
     cp $DOTFILES/$file $HOME/$file
   fi
@@ -69,6 +67,8 @@ fi
 
 PATH=$(brew --prefix)/bin:$PATH
 brew bundle
+mise install
+pip install neovim
 
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/masahirano/dotfiles#manual-operations"

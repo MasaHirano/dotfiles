@@ -19,6 +19,7 @@ FILES="
 .config/starship.toml .config/starship.toml
 .vimrc .vimrc
 .zshrc .zshrc
+platform/devcontainer/.config/mise/config.toml .config/mise/config.toml
 platform/devcontainer/.local/.zshrc .local/.zshrc
 "
 
@@ -49,9 +50,9 @@ done
 
 # Detect package manager
 if command -v apt >/dev/null 2>&1; then
-  sudo apt update && sudo apt upgrade -y && sudo apt install -y zsh curl fzf neovim python3-neovim
+  sudo apt update && sudo apt upgrade -y && sudo apt install -y zsh curl python3-neovim
 elif command -v apk >/dev/null 2>&1; then
-  apk update && apk upgrade && apk add zsh curl fzf neovim py3-pynvim sudo shadow
+  apk update && apk upgrade && apk add zsh curl py3-pynvim sudo shadow
 else
   echo "Unsupported package manager. Only apt and apk are supported."
   exit 1
@@ -62,12 +63,10 @@ if ! command -v mise >/dev/null 2>&1; then
   curl https://mise.run | sh
 fi
 
-# Install Starship - https://starship.rs/
-if ! command -v starship >/dev/null 2>&1; then
-  curl -sS https://starship.rs/install.sh | sh -s -- -y
-fi
-
-sudo chsh -s /bin/zsh
+mise install
 
 # vim-plug
 DOTFILES_ROOT="$DOTFILES" nvim +PlugInstall +qall
+
+sudo chsh -s $(command -v zsh)
+zsh

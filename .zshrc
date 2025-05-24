@@ -20,11 +20,13 @@ zi snippet OMZL::key-bindings.zsh
 zi wait lucid atload"zicompinit" for \
   OMZL::completion.zsh
 
-zi snippet OMZP::fzf
-zi snippet OMZP::z
+# The mise plugin must be loaded first since other plugins depend on it.
 zi snippet OMZP::mise
+zi snippet OMZP::direnv
+zi snippet OMZP::fzf
+zi snippet OMZP::starship
+zi snippet OMZP::z
 
-zi light zsh-users/zsh-autosuggestions
 zi light zsh-users/zsh-syntax-highlighting
 
 alias g=git
@@ -33,21 +35,8 @@ alias rm="rm -i"
 
 export EDITOR=nvim
 
-# Activate `mise` - https://mise.jdx.dev/getting-started.html#activate-mise
-eval "$(mise activate zsh)"
-
 # zsh-z - https://github.com/agkozak/zsh-z
 export ZSHZ_TRAILING_SLASH=1
-
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-eval "$(starship init zsh)"
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

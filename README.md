@@ -15,16 +15,6 @@ sh setup.sh
 
 After executing `setup.sh`, there is some chore that needs to be done manually.
 
-### Install Python packages
-
-Some Python packages are required by Neovim and tmux.
-
-Install Python and packages.
-```sh
-mise install python@latest
-pip install neovim psutil netifaces
-```
-
 ### Fonts
 
 Install one of the powerline fonts from [nerd-fonts](https://github.com/ryanoasis/nerd-fonts).

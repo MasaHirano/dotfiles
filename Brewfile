@@ -1,11 +1,7 @@
 # vim: syntax=ruby
 
-brew "fzf"
-brew "jq"
 brew "mise"
-brew "neovim"
 brew "nkf"
-brew "starship"
 brew "tig"
 brew "tree"
 
