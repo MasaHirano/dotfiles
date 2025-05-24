@@ -28,15 +28,16 @@ zi snippet OMZP::starship
 zi snippet OMZP::z
 
 zi light zsh-users/zsh-syntax-highlighting
+if [[ ! -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]]; then
+  zi light zsh-users/zsh-autosuggestions
+fi
 
 alias g=git
 alias vim=nvim
 alias rm="rm -i"
 
 export EDITOR=nvim
-
-# zsh-z - https://github.com/agkozak/zsh-z
-export ZSHZ_TRAILING_SLASH=1
+export ZSHZ_TRAILING_SLASH=1 # zsh-z - https://github.com/agkozak/zsh-z
 
 # Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

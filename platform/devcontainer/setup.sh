@@ -52,7 +52,7 @@ done
 if command -v apt >/dev/null 2>&1; then
   sudo apt update && sudo apt upgrade -y && sudo apt install -y zsh curl python3-neovim
 elif command -v apk >/dev/null 2>&1; then
-  apk update && apk upgrade && apk add zsh curl py3-pynvim sudo shadow
+  apk update && apk upgrade && apk add bash zsh curl py3-pynvim sudo shadow
 else
   echo "Unsupported package manager. Only apt and apk are supported."
   exit 1
@@ -63,10 +63,10 @@ if ! command -v mise >/dev/null 2>&1; then
   curl https://mise.run | sh
 fi
 
-mise install
+~/.local/bin/mise install
 
 # vim-plug
 DOTFILES_ROOT="$DOTFILES" nvim +PlugInstall +qall
 
 sudo chsh -s $(command -v zsh)
-zsh
+zsh -i -c "exit" || true
