@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # --------------------
 # Dotfiles Install Command:
@@ -66,7 +66,7 @@ fi
 ~/.local/bin/mise install
 
 # vim-plug
-DOTFILES_ROOT="$DOTFILES" nvim +PlugInstall +qall
+DOTFILES_ROOT="$DOTFILES" nvim --headless +PlugInstall +qall
 
 sudo chsh -s $(command -v zsh)
 zsh -i -c "exit" || true
