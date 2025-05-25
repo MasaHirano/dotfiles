@@ -16,31 +16,26 @@ echo;
 # ----- Create links with backup -----
 
 FILES=(
-  Brewfile
+  .asdfrc
+  .config/karabiner/assets
+  .config/mise/config.toml
+  .config/nvim
+  .config/starship.toml
   .gitconfig
   .ideavimrc
-  .tmux.conf
   .vimrc
   .zprofile
   .zshrc
-  .asdfrc
-  .config/fish/config.fish
-  .config/fish/fish_plugins
-  .config/nvim
-  .config/powerline
-  .config/karabiner/assets
-  .config/starship.toml
+  Brewfile
 )
 
-mkdir -p $HOME/.config/{fish,nvim,karabiner}
-mkdir -p $BACKUP_DIR/.config/{fish,nvim,karabiner}
-
-for file in "${FILES[@]}"
-do
+for file in "${FILES[@]}"; do
   if [[ -L $HOME/$file ]]; then
     continue
   fi
 
+  mkdir -p "$(dirname "$HOME/$file")"
+  mkdir -p "$(dirname "$BACKUP_DIR/$file")"
   if [[ -e $HOME/$file ]]; then
     cp -pr $HOME/$file $BACKUP_DIR/$file
     rm -rf $HOME/$file
@@ -54,13 +49,9 @@ done
 LOCAL_FILES=(
   .local/.gitconfig
   .local/.zshrc
-  .local/fish/config.fish
 )
 
-mkdir -p $HOME/.local/fish
-
-for file in "${LOCAL_FILES[@]}"
-do
+for file in "${LOCAL_FILES[@]}"; do
   if [[ ! -f $HOME/$file ]]; then
     cp $DOTFILES/$file $HOME/$file
   fi
@@ -76,16 +67,8 @@ fi
 
 PATH=$(brew --prefix)/bin:$PATH
 brew bundle
-
-# Poetry - https://python-poetry.org/docs/#installing-with-the-official-installer
-if ! type poetry > /dev/null; then
-  curl -sSL https://install.python-poetry.org | python3 -
-fi
-
-# Fisher - https://github.com/jorgebucaran/fisher?tab=readme-ov-file#installation
-if ! fish -c "type fisher > /dev/null"; then
-  fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update"
-fi
+mise install
+pip install neovim
 
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/masahirano/dotfiles#manual-operations"

@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration files for Fish-shell, Vim, tmux, and any other useful tools that power my Software Development.
+Configuration files for Zsh, Vim, and any other useful tools that power my Software Development.
 
 ## Setup
 
@@ -14,18 +14,6 @@ sh setup.sh
 ## Manual operations
 
 After executing `setup.sh`, there is some chore that needs to be done manually.
-
-### Install Python packages
-
-Some Python packages are required by Neovim and tmux.
-
-Install Python and packages.
-```sh
-asdf plugin add python
-asdf install python <python-version>
-asdf global python <python-version>
-pip install neovim powerline-status psutil netifaces
-```
 
 ### Fonts
 
