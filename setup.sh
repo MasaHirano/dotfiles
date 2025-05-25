@@ -70,6 +70,18 @@ brew bundle
 mise install
 pip install neovim
 
+# Set up Neovim with lazy.nvim
+if [[ -d $HOME/.local/share/nvim/lazy ]]; then
+  echo "lazy.nvim is already installed."
+else
+  echo "Setting up Neovim with lazy.nvim..."
+  # Create necessary directories
+  mkdir -p $HOME/.local/share/nvim
+
+  # First run of Neovim will install lazy.nvim and plugins
+  NVIM_APPNAME=nvim nvim --headless "+Lazy! sync" +qa
+fi
+
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/masahirano/dotfiles#manual-operations"
 echo;

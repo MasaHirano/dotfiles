@@ -2,5 +2,8 @@ Brewfile.lock.json
 
 .DS_Store
 
+# Local configuration files
+.config/nvim/lua/{config,plugins}/local.lua
+
 # See https://github.com/github/gitignore/blob/master/Global/Vim.gitignore
 *.swp

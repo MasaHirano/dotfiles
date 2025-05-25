@@ -65,8 +65,9 @@ fi
 
 ~/.local/bin/mise install
 
-# vim-plug
-DOTFILES_ROOT="$DOTFILES" nvim --headless +PlugInstall +qall
+# Set up Neovim with lazy.nvim
+mkdir -p $HOME/.local/share/nvim
+DOTFILES_ROOT="$DOTFILES" nvim --headless "+Lazy! sync" +qa
 
 sudo chsh -s $(command -v zsh)
 zsh -i -c "exit" || true
