@@ -1,8 +1,6 @@
 -- Colorscheme: Gruvbox
 return {
   "ellisonleao/gruvbox.nvim",
-  lazy = false,
-  priority = 1000, -- Load colorscheme early
   config = function()
     -- Configure gruvbox theme options
     require("gruvbox").setup({

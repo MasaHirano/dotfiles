@@ -13,15 +13,14 @@ return {
     keys = { { "<leader>a=", "<cmd>Tabularize /=<cr>", desc = "Align by =" } },
   },
 
-  -- Align
-  { "vim-scripts/Align", cmd = "Align" },
-
   -- Better comments
   {
     "scrooloose/nerdcommenter",
     keys = {
-      { "<leader>cc", "<plug>NERDCommenterComment", desc = "Comment" },
-      { "<leader>cu", "<plug>NERDCommenterUncomment", desc = "Uncomment" },
+      { ",,", "<plug>NERDCommenterToggle", mode = "n", desc = "Toggle comment" },
+      { ",,", "<plug>NERDCommenterToggle", mode = "v", desc = "Toggle comment" },
+      { ",s", "<plug>NERDCommenterSexy", mode = "n", desc = "Sexy comment" },
+      { ",s", "<plug>NERDCommenterSexy", mode = "v", desc = "Sexy comment" },
     },
   },
 
@@ -40,17 +39,5 @@ return {
   {
     "tpope/vim-endwise",
     event = "InsertEnter",
-  },
-
-  -- XML edit
-  {
-    "sukima/xmledit",
-    ft = { "xml", "html" },
-  },
-
-  -- Submodes
-  {
-    "kana/vim-submode",
-    event = "VeryLazy",
   },
 }

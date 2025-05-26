@@ -12,9 +12,10 @@ function M.setup()
   require("config.autocmds")
   require("config.keymaps")
 
-  local ok, _ = pcall(require, "config.local")
-  if ok then
-    print("Loaded config.local")
+  -- Load config.local if it exists
+  local config_local_path = vim.fn.stdpath("config") .. "/lua/config/local.lua"
+  if vim.fn.filereadable(config_local_path) == 1 then
+    require("config.local")
   end
 end
 

@@ -12,8 +12,10 @@ return {
   -- Airline
   {
     "vim-airline/vim-airline",
-    config = function()
+    init = function()
       vim.g.airline_powerline_fonts = 1
+      vim.g["airline#extensions#tabline#enabled"] = 1
+      vim.g["airline#extensions#tabline#buffer_nr_show"] = 1
     end,
   },
 
