@@ -1,51 +1,41 @@
 -- UI Plugins (bufferline, lualine, etc.)
 return {
-  --- Bufferline
+  --- bufferline https://github.com/akinsho/bufferline.nvim
   {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
     config = function()
       require("bufferline").setup()
     end,
   },
 
-  -- Status line
+  -- lualine https://github.com/nvim-lualine/lualine.nvim
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
     config = function()
       require("lualine").setup()
     end,
   },
 
-  -- File explorer
+  -- File explorer https://github.com/nvim-tree/nvim-tree.lua
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons", },
     keys = {
-      { "<leader>nt", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
     },
     config = function()
       require("nvim-tree").setup()
     end,
   },
 
-  -- Indent guides
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-    opts = {},
-    config = function(_, opts)
-      require("ibl").setup(opts)
-    end,
-  },
-
-  -- Better whitespace
+  -- Better whitespace https://github.com/ntpeters/vim-better-whitespace
   {
     "ntpeters/vim-better-whitespace",
     event = "BufReadPost",

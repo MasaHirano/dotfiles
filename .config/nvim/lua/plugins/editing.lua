@@ -1,19 +1,25 @@
 -- Editing plugins
 return {
-  -- Switch
+  -- Deoplete (async completion) https://github.com/Shougo/deoplete.nvim
   {
-    "AndrewRadev/switch.vim",
-    keys = { { "<leader>s", "<cmd>Switch<cr>", desc = "Switch" } },
+    "Shougo/deoplete.nvim",
+    event = "InsertEnter",
+    build = ":UpdateRemotePlugins",
+    init = function()
+      vim.g["deoplete#enable_at_startup"] = 1
+    end,
+    cond = function()
+      return vim.fn.has("nvim") == 1
+    end,
   },
 
-  -- Tabular
+  -- Snippets https://github.com/honza/vim-snippets
   {
-    "godlygeek/tabular",
-    cmd = "Tabularize",
-    keys = { { "<leader>a=", "<cmd>Tabularize /=<cr>", desc = "Align by =" } },
+    "honza/vim-snippets",
+    event = "InsertEnter",
   },
 
-  -- Better comments
+  -- Better comments https://github.com/preservim/nerdcommenter
   {
     "scrooloose/nerdcommenter",
     keys = {
@@ -22,22 +28,5 @@ return {
       { ",s", "<plug>NERDCommenterSexy", mode = "n", desc = "Sexy comment" },
       { ",s", "<plug>NERDCommenterSexy", mode = "v", desc = "Sexy comment" },
     },
-  },
-
-  -- Surround
-  {
-    "vim-scripts/surround.vim",
-    keys = {
-      { "ds", desc = "Delete surrounding" },
-      { "cs", desc = "Change surrounding" },
-      { "ys", desc = "Add surrounding" },
-      { "S", mode = "v", desc = "Surround visual selection" },
-    },
-  },
-
-  -- Endwise (automatically add end)
-  {
-    "tpope/vim-endwise",
-    event = "InsertEnter",
   },
 }

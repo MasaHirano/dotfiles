@@ -1,4 +1,4 @@
--- Colorscheme: Gruvbox
+-- Colorscheme: Gruvbox https://github.com/ellisonleao/gruvbox.nvim
 return {
   "ellisonleao/gruvbox.nvim",
   config = function()
