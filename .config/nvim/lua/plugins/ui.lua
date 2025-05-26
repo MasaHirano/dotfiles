@@ -1,41 +1,47 @@
--- UI Plugins (NERDTree, airline, etc.)
+-- UI Plugins (bufferline, lualine, etc.)
 return {
-  -- NERDTree
+  --- Bufferline
   {
-    "scrooloose/nerdtree",
-    cmd = { "NERDTree", "NERDTreeToggle" },
-    keys = {
-      { "<leader>nt", "<cmd>NERDTreeToggle<cr>", desc = "Toggle NERDTree" },
-    },
+    "akinsho/bufferline.nvim",
+    version = "*",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("bufferline").setup()
+    end,
   },
 
-  -- Airline
+  -- Status line
   {
-    "vim-airline/vim-airline",
-    init = function()
-      vim.g.airline_powerline_fonts = 1
-      vim.g["airline#extensions#tabline#enabled"] = 1
-      vim.g["airline#extensions#tabline#buffer_nr_show"] = 1
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("lualine").setup()
+    end,
+  },
+
+  -- File explorer
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons", },
+    keys = {
+      { "<leader>nt", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
+    },
+    config = function()
+      require("nvim-tree").setup()
     end,
   },
 
   -- Indent guides
   {
-    "nathanaelkane/vim-indent-guides",
-    event = "BufReadPost",
-    config = function()
-      -- Migrating configuration from your plugins_config.vim
-      vim.g["indent_guides_enable_on_vim_startup"] = 1
-      vim.g["indent_guides_auto_colors"] = 0
-
-      -- Set up colors when the colorscheme is loaded
-      vim.api.nvim_create_autocmd("ColorScheme", {
-        pattern = "*",
-        callback = function()
-          vim.cmd("hi IndentGuidesOdd  ctermbg=237")
-          vim.cmd("hi IndentGuidesEven ctermbg=236")
-        end,
-      })
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
+    opts = {},
+    config = function(_, opts)
+      require("ibl").setup(opts)
     end,
   },
 
