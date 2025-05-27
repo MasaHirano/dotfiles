@@ -4,4 +4,4 @@
 *.swp
 
 # Local configuration files
-.config/nvim/lua/{config,plugins}/local.lua
+.config/nvim/lua/**/*/local.lua
