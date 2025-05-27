@@ -70,6 +70,8 @@ brew bundle
 mise install
 pip install neovim
 
+nvim --headless "+Lazy! sync" +qa
+
 echo "Setup has been done."
 echo "Some manual operations are required. Please see https://github.com/masahirano/dotfiles#manual-operations"
 echo;

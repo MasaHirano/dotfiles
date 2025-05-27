@@ -1,6 +1,6 @@
 # dotfiles
 
-Configuration files for Zsh, Vim, and any other useful tools that power my Software Development.
+Configuration files for Zsh, Neovim, and any other useful tools that power my Software Development.
 
 ## Setup
 

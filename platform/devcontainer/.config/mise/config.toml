@@ -1,5 +1,6 @@
 [tools]
 direnv = "latest"
+fd = "latest"
 fzf = "latest"
 jq = "latest"
 neovim = "latest"

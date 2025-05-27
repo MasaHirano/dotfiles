@@ -1,9 +1,9 @@
 [tools]
 direnv = "latest"
+fd = "latest"
 fzf = "latest"
 jq = "latest"
 neovim = "latest"
 node = "latest"
 python = "latest"
 starship = "latest"
-swiftformat = "latest"
