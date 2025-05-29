@@ -22,6 +22,10 @@ return {
   -- Better comments https://github.com/preservim/nerdcommenter
   {
     "scrooloose/nerdcommenter",
+    config = function()
+      -- Add spaces after comment delimiters by default
+      vim.g.NERDSpaceDelims = 1
+    end,
     keys = {
       { ",,", "<plug>NERDCommenterToggle", mode = "n", desc = "Toggle comment" },
       { ",,", "<plug>NERDCommenterToggle", mode = "v", desc = "Toggle comment" },
