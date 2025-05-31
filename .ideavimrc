@@ -1,25 +1,28 @@
 " References
 " - https://github.com/JetBrains/ideavim#Files
 
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins ----------------------------
+set argtextobj
+set easymotion
+set sneak
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
 
 """ Common settings -------------------------
 set visualbell
 set noerrorbells
 set clipboard+=unnamed
 
-
 """ Idea specific settings ------------------
 set ideajoin
 set ideastatusicon=gray
 set idearefactormode=keep
 
-
-""" Idea Vim plugins ----------------------------
-set sneak
-set easymotion
-
-
-""" Insert mode keymap ----------------------
+""" Mappings --------------------------------
 inoremap <silent> <C-a> <Home>
 inoremap <silent> <C-b> <Left>
 inoremap <silent> <C-d> <Del>
